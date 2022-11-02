@@ -1,0 +1,68 @@
+name: Terraform Testing
+on:
+  push:
+    branches: [push, pull_request]
+jobs:
+  bootstrap:
+    name: Bootstrap
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Authenticate to Google Cloud
+        id: auth-gcp
+        uses: google-github-actions/auth@v0.8.3
+        with:
+          workload_identity_provider: projects/1039850042661/locations/global/workloadIdentityPools/github-pool-prod/providers/github-provider-prod
+          service_account: terraform-orchestrator@proj-mission-control-80492.iam.gserviceaccount.com
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.3.0
+
+      - name: Initialize Terraform
+        id: terraform-init
+        run: terraform init
+        working-directory: ./0-bootstrap
+
+      - name: Plan Terraform
+        id: terraform-plan
+        run: terraform plan -no-color
+        working-directory: ./0-bootstrap
+  project-factory:
+    name: Project Factory
+    needs: bootstrap
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Authenticate to Google Cloud
+        id: auth-gcp
+        uses: google-github-actions/auth@v0.8.3
+        with:
+          workload_identity_provider: projects/1039850042661/locations/global/workloadIdentityPools/github-pool-prod/providers/github-provider-prod
+          service_account: terraform-orchestrator@proj-mission-control-80492.iam.gserviceaccount.com
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.3.0
+
+      - name: Initialize Terraform
+        id: terraform-init
+        run: terraform init
+        working-directory: ./1-project-factory
+
+      - name: Plan Terraform
+        id: terraform-plan
+        run: terraform plan -no-color
+        working-directory: ./1-project-factory

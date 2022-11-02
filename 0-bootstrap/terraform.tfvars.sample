@@ -1,0 +1,14 @@
+billing_account_id = "123456-789012-345678"
+domain             = "myorganization.com"
+folders = [
+  {
+    name      = "common"
+    group_iam = {}
+    iam       = {}
+  },
+  {
+    name      = "production"
+    group_iam = {}
+    iam       = {}
+  }
+]
