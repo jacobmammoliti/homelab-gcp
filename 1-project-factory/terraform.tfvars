@@ -28,4 +28,21 @@ projects = [
     iam              = {}
     vpc_host_project = "proj-mission-control-80492"
   },
+  {
+    billing_account = "017A11-41C11E-BB4416"
+    name            = "sports-board"
+    prefix          = "prod"
+    parent          = "840883279074"
+    services = [
+      "cloudfunctions.googleapis.com",
+      "cloudbuild.googleapis.com",
+      "cloudscheduler.googleapis.com",
+      "eventarc.googleapis.com",
+      "run.googleapis.com",
+      "artifactregistry.googleapis.com",
+      "bigquery.googleapis.com"
+    ]
+    iam              = {}
+    vpc_host_project = "proj-mission-control-80492"
+  },
 ]
