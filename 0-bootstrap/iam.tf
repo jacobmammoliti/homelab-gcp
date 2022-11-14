@@ -11,6 +11,7 @@ module "wif-terraform-service-account" {
       "roles/orgpolicy.policyAdmin",
       "roles/iam.organizationRoleAdmin",
       "roles/iam.serviceAccountAdmin",
+      "roles/iam.securityAdmin",
       "roles/resourcemanager.organizationViewer",
       "roles/resourcemanager.folderCreator",
       "roles/resourcemanager.projectCreator",
