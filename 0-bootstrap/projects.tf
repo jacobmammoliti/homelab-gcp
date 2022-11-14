@@ -16,7 +16,8 @@ module "project" {
     "iamcredentials.googleapis.com",
     "cloudresourcemanager.googleapis.com",
     "serviceusage.googleapis.com",
-    "iam.googleapis.com"
+    "iam.googleapis.com",
+    "cloudbilling.googleapis.com"
   ]
   shared_vpc_host_config = {
     enabled          = true
