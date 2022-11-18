@@ -1,8 +1,6 @@
 name: Terraform Testing
 on:
   pull_request:
-  push:
-    branches: [main]
 jobs:
   bootstrap:
     name: Bootstrap
