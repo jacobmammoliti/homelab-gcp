@@ -124,6 +124,3 @@ def main(cloud_event=None):
     df = build_data_frame(data, initialize_data_frame())
 
     write_to_bigquery(env_vars, df)
-
-if __name__ == "__main__":
-    main()
