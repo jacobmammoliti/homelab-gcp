@@ -23,7 +23,8 @@ projects = [
       "sheets.googleapis.com",
       "eventarc.googleapis.com",
       "run.googleapis.com",
-      "artifactregistry.googleapis.com"
+      "artifactregistry.googleapis.com",
+      "bigquery.googleapis.com",
     ]
     iam              = {}
     vpc_host_project = "proj-mission-control-80492"

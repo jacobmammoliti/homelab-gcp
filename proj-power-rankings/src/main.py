@@ -9,14 +9,15 @@ from datetime import datetime, timedelta
 from google.cloud import bigquery
 from google.api_core.exceptions import NotFound
 
-logging.basicConfig(stream=sys.stdout,
+logging.basicConfig(
+    stream=sys.stdout,
     level=logging.INFO,
     format="[%(levelname)s] %(asctime)s %(message)s",
-    datefmt="%m/%d/%Y %H:%M:%S"
-    )
+    datefmt="%m/%d/%Y %H:%M:%S",
+)
 
 def get_env() -> dict:
-    logging.info("Retriving environment variables.")
+    logging.info("Retrieving environment variables.")
     env_vars = {}
 
     for key, value in os.environ.items():
@@ -26,7 +27,7 @@ def get_env() -> dict:
     
     return env_vars
 
-def initalize_data_frame() -> pd.DataFrame:
+def initialize_data_frame() -> pd.DataFrame:
     logging.info("Initializing Pandas DataFrame.")
     return pd.DataFrame()
 
@@ -120,7 +121,7 @@ def main(cloud_event=None):
 
         data = fetch_board_via_url(env_vars)
     
-    df = build_data_frame(data, initalize_data_frame())
+    df = build_data_frame(data, initialize_data_frame())
 
     write_to_bigquery(env_vars, df)
 
