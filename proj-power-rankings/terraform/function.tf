@@ -22,7 +22,7 @@ resource "google_cloudfunctions2_function" "get_nhl_scores" {
 
   service_config {
     max_instance_count    = 1
-    available_memory      = "256M"
+    available_memory      = "512M"
     timeout_seconds       = 60
     service_account_email = google_service_account.cloud_function_service_account.email
     environment_variables = {

@@ -63,10 +63,10 @@ def build_data_frame(data: dict, df: pd.DataFrame) -> pd.DataFrame:
     for games in data["dates"][0]["games"]:
         new_df = pd.DataFrame([{
             "date": (datetime.today() - timedelta(days=1)).strftime("%Y-%m-%d"),
-            "home_team": games["teams"]["home"]["team"]["name"],
+            "home_team_name": games["teams"]["home"]["team"]["name"],
             "home_team_score": games["teams"]["home"]["score"],
             "away_team_score": games["teams"]["away"]["score"],
-            "away_team": games["teams"]["away"]["team"]["name"],
+            "away_team_name": games["teams"]["away"]["team"]["name"],
         }])
 
         df = pd.concat([df, new_df], ignore_index=True)
@@ -88,15 +88,10 @@ def write_to_bigquery(env_vars: dict, df: pd.DataFrame) -> None:
 
     try:
         client.get_dataset(bq_dataset)
-    except NotFound as error:
-        logging.error(f"Dataset not found. Got: {error}.")
-        sys.exit(1)
-
-    try:
         table_ref = client.dataset(bq_dataset).table(bq_table)
         table = client.get_table(table_ref)
     except NotFound as error:
-        logging.error(f"Table not found. Got: {error}.")
+        logging.error(f"Entity not found. Got: {error}.")
         sys.exit(1)
     
     try:
@@ -112,8 +107,10 @@ def write_to_bigquery(env_vars: dict, df: pd.DataFrame) -> None:
         logging.info("Successfully wrote games to Big Query.")
 
 # Triggered from a message on a Cloud Pub/Sub topic.
-# @functions_framework.cloud_event
-def main(cloud_event=None):
+@functions_framework.cloud_event
+def main(cloud_event):
+    logging.info(f"Received event with ID: {cloud_event['id']} and data {cloud_event.data}")
+    
     if len(sys.argv) > 1:
         data = fetch_board_via_file(sys.argv[1])
     else:
