@@ -1,6 +1,6 @@
 # :bar_chart: proj-power-rankings
 ## Overview
-This project is the home of the Power Rankings project. At its core, it is a Python script that retrieves NHL scores from the night before and posts them to a Google Sheet. From there, linear regression is used to calculate power ratings of each time based on their season performance. Finally, each team is then ranked.
+This project is the home of the Power Rankings project. At its core, it is a Python script that retrieves NHL scores from the night before and writes them to a BigQuery table. From there, linear regression is used to calculate power ratings of each time based on their season performance. Finally, each team is then ranked.
 
 ## High-Level Architecture
 ![architecture](images/architecture.png)
@@ -14,5 +14,5 @@ This project is the home of the Power Rankings project. At its core, it is a Pyt
 ### Cloud Functions
 [Cloud Functions](https://cloud.google.com/functions/docs/concepts/overview) is a serverless execution environment that allows you to write simple, single-purposed functions that are attached to events. In this use case, the Cloud Function is subscribed to a Pub/Sub topic is runs every time that topic is triggered.
 
-### Google Sheets
-[Google Sheets](https://www.google.ca/sheets/about/) is an online spreadsheet solution. In this use case, it is a ingestion point for data generated from the Cloud Function.
+### BigQuery
+[BigQuery](https://cloud.google.com/bigquery/docs/introduction) is a managed enterprise data warehouse that helps manage and analyze data with built-in features such as machine learning. In this use case, BigQuery is used to store the data from the Cloud Function and to run machine learning algorithms on that data.
