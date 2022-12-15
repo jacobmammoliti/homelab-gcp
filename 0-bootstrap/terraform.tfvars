@@ -1,5 +1,4 @@
 billing_account_id = "017A11-41C11E-BB4416"
-domain             = "homepage.ca"
 folders = [
   {
     name      = "common"

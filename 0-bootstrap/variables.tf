@@ -37,3 +37,8 @@ variable "admin_group" {
   type        = string
   description = "Email alias for Google admin group."
 }
+
+variable "billing_admins_group" {
+  type        = string
+  description = "Email alias for Google billing admin group."
+}

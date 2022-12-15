@@ -3,7 +3,9 @@ on:
   push:
     branches: [main]
 env:
+  TF_VAR_domain: ${{ secrets.DOMAIN }}
   TF_VAR_admin_group: ${{ secrets.ADMIN_GROUP }}
+  TF_VAR_billing_admins: ${{ secrets.BILLING_ADMINS_GROUP }}
 jobs:
   bootstrap:
     name: Bootstrap

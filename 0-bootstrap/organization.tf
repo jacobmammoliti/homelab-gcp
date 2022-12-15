@@ -13,6 +13,11 @@ module "org" {
       "roles/securitycenter.adminViewer",
       "roles/cloudsupport.viewer",
     ]
+
+    (var.billing_admins_group) = [
+      "roles/billing.admin",
+      "roles/billing.creator",
+    ]
   }
   policy_boolean = {
     "constraints/compute.skipDefaultNetworkCreation" = true
