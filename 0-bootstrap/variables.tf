@@ -32,3 +32,8 @@ variable "github_repository" {
   type        = string
   description = "Name of the GitHub repository to use for Workload Identity Federation."
 }
+
+variable "admin_group" {
+  type        = string
+  description = "Email alias for Google admin group."
+}
