@@ -1,1 +1,1 @@
-compress: zip -r src.zip src/*
+compress: zip -j src.zip src/*

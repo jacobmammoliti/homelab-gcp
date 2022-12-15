@@ -22,13 +22,14 @@ resource "google_cloudfunctions2_function" "get_nhl_scores" {
 
   service_config {
     max_instance_count    = 1
-    available_memory      = "256M"
+    available_memory      = "512M"
     timeout_seconds       = 60
     service_account_email = google_service_account.cloud_function_service_account.email
     environment_variables = {
-      API_ENDPOINT                = "https://statsapi.web.nhl.com/api/v1/schedule"
-      GOOGLE_SHEET_NAME           = "National Hockey League 2022/2023"
-      GOOGLE_SHEET_WORKSHEET_NAME = "raw_scores"
+      PR_BASE_URL   = "https://statsapi.web.nhl.com/api/v1/schedule"
+      PR_BQ_DATASET = module.bigquery-dataset.dataset_id
+      PR_BQ_TABLE   = keys(module.bigquery-dataset.table_ids)[0]
+      PR_PROJECT_ID = data.google_client_config.current.project
     }
   }
 
