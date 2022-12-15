@@ -5,7 +5,7 @@ module "gh_oidc" {
   provider_id = "github-provider-prod"
   sa_mapping = {
     "terraform-service-account" = {
-      sa_name   =  module.wif-terraform-service-account.id
+      sa_name   = module.wif-terraform-service-account.id
       attribute = format("attribute.repository/%s/%s", var.github_organization, var.github_repository)
     }
   }

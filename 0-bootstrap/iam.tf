@@ -5,7 +5,7 @@ module "wif-terraform-service-account" {
   name         = "terraform-orchestrator"
   description  = "Terraform WIF service account"
   generate_key = false
-  
+
   iam_organization_roles = {
     (data.google_organization.org.org_id) = [
       "roles/orgpolicy.policyAdmin",
