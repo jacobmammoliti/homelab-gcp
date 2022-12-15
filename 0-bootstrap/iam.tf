@@ -15,9 +15,13 @@ module "wif-terraform-service-account" {
       "roles/resourcemanager.organizationViewer",
       "roles/resourcemanager.folderCreator",
       "roles/resourcemanager.projectCreator",
-      "roles/owner",
       "roles/billing.user",
-      "roles/compute.xpnAdmin"
+      "roles/compute.xpnAdmin",
+      "roles/compute.networkAdmin",
+      "roles/bigquery.user",
+      "roles/artifactregistry.admin",
+      "roles/storage.admin",
+      "roles/iam.workloadIdentityPoolAdmin",
     ]
   }
 }

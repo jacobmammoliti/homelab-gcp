@@ -8,10 +8,15 @@ module "org" {
       "roles/logging.viewer",
       "roles/resourcemanager.organizationViewer",
       "roles/orgpolicy.policyViewer",
-      "roles/iam.organizationRoleViewer",
-      "roles/owner",
+      "roles/iam.organizationRoleAdmin",
       "roles/securitycenter.adminViewer",
       "roles/cloudsupport.viewer",
+      "roles/compute.networkViewer",
+    ]
+
+    (var.billing_admins_group) = [
+      "roles/billing.admin",
+      "roles/billing.creator",
     ]
   }
   policy_boolean = {
