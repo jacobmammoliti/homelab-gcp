@@ -3,7 +3,7 @@ module "org" {
 
   organization_id = data.google_organization.org.name
   group_iam = {
-    var.admin_group = [
+    (var.admin_group) = [
       "roles/resourcemanager.folderViewer",
       "roles/logging.viewer",
       "roles/resourcemanager.organizationViewer",
@@ -12,7 +12,7 @@ module "org" {
       "roles/owner",
       "roles/securitycenter.adminViewer",
       "roles/cloudsupport.viewer",
-      ]
+    ]
   }
   policy_boolean = {
     "constraints/compute.skipDefaultNetworkCreation" = true
