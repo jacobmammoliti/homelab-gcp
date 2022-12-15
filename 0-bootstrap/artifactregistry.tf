@@ -6,6 +6,6 @@ module "docker_artifact_registry" {
   format     = "DOCKER"
   id         = "core"
   iam = {
-    "roles/artifactregistry.admin" = [var.admin_group]
+    "roles/artifactregistry.admin" = [format("group:%s", var.admin_group)]
   }
 }
