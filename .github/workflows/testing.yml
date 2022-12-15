@@ -3,6 +3,8 @@ on:
   pull_request:
   push:
     branches: [main]
+env:
+  TF_VAR_admin_group: ${{ secrets.ADMIN_GROUP }}
 jobs:
   bootstrap:
     name: Bootstrap
