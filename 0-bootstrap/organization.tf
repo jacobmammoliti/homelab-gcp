@@ -12,6 +12,7 @@ module "org" {
       "roles/securitycenter.adminViewer",
       "roles/cloudsupport.viewer",
       "roles/compute.networkViewer",
+      "roles/owner",
     ]
 
     (var.billing_admins_group) = [
