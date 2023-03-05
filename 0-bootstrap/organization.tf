@@ -20,7 +20,9 @@ module "org" {
       "roles/billing.creator",
     ]
   }
-  policy_boolean = {
-    "constraints/compute.skipDefaultNetworkCreation" = true
+  org_policies = {
+    "constraints/compute.skipDefaultNetworkCreation" = {
+      enforce = true
+    }
   }
 }
