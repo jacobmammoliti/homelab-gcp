@@ -18,7 +18,8 @@ module "project" {
     "serviceusage.googleapis.com",
     "iam.googleapis.com",
     "cloudbilling.googleapis.com",
-    "bigquery.googleapis.com"
+    "bigquery.googleapis.com",
+    "orgpolicy.googleapis.com",
   ]
   shared_vpc_host_config = {
     enabled          = true
