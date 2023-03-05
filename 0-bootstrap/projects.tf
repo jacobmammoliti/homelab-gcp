@@ -4,7 +4,7 @@ resource "random_integer" "project_suffix" {
 }
 
 module "project" {
-  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/project?ref=v18.0.0"
+  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/project?ref=v20.0.0"
 
   billing_account = var.billing_account_id
   name            = format("mission-control-%s", random_integer.project_suffix.id)

@@ -1,5 +1,5 @@
 module "wif-terraform-service-account" {
-  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/iam-service-account?ref=v18.0.0"
+  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/iam-service-account?ref=v20.0.0"
 
   project_id   = module.project.project_id
   name         = "terraform-orchestrator"

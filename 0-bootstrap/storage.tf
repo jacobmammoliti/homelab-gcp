@@ -4,7 +4,7 @@ resource "random_integer" "bucket_suffix" {
 }
 
 module "bucket" {
-  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/gcs?ref=v18.0.0"
+  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/gcs?ref=v20.0.0"
 
   project_id    = module.project.project_id
   prefix        = "bkt"
