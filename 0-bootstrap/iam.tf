@@ -22,6 +22,7 @@ module "wif-terraform-service-account" {
       "roles/artifactregistry.admin",
       "roles/storage.admin",
       "roles/iam.workloadIdentityPoolAdmin",
+      "roles/compute.securityAdmin",
     ]
   }
 }
