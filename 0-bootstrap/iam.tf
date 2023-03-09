@@ -26,3 +26,18 @@ module "wif-terraform-service-account" {
     ]
   }
 }
+
+module "wif-artifact-registry-service-account" {
+  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/iam-service-account?ref=v20.0.0"
+
+  project_id   = module.project.project_id
+  name         = "artifact-registry-pusher"
+  description  = "Artifact Registry Pusher WIF service account"
+  generate_key = false
+
+  iam_project_roles = {
+    (module.project.project_id) = [
+      "roles/artifactregistry.writer",
+    ]
+  }
+}
