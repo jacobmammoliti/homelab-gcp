@@ -8,7 +8,7 @@ module "gh_oidc" {
       sa_name   = module.wif-terraform-service-account.id
       attribute = format("attribute.repository/%s/%s", var.github_organization, var.github_repository)
     },
-    "artifact-registry-account" {
+    "artifact-registry-account" = {
       sa_name   = module.wif-artifact-registry-service-account.id
       attribute = format("attribute.repository/%s/scouter", var.github_organization)     
     }
