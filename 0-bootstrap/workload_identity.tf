@@ -10,7 +10,7 @@ module "gh_oidc" {
     },
     "artifact-registry-account" = {
       sa_name   = module.wif-artifact-registry-service-account.id
-      attribute = format("attribute.repository/%s/scouter", var.github_organization)     
+      attribute = format("attribute.repository/%s/scoreboard", var.github_organization)     
     }
   }
 }
