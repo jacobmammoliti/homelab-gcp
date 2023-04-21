@@ -1,3 +1,4 @@
 output "bucket_name" {
-  value = module.bucket.name
+  description = "GCP bucket name for Terraform state."
+  value       = module.bucket.name
 }
