@@ -1,5 +1,7 @@
 module "gh_oidc" {
-  source      = "terraform-google-modules/github-actions-runners/google//modules/gh-oidc"
+  source  = "terraform-google-modules/github-actions-runners/google//modules/gh-oidc"
+  version = "3.1.1"
+
   project_id  = module.project.project_id
   pool_id     = "github-pool-prod"
   provider_id = "github-provider-prod"
@@ -10,7 +12,7 @@ module "gh_oidc" {
     },
     "artifact-registry-account" = {
       sa_name   = module.wif-artifact-registry-service-account.id
-      attribute = format("attribute.repository/%s/scoreboard", var.github_organization)     
+      attribute = format("attribute.repository/%s/scoreboard", var.github_organization)
     }
   }
 }

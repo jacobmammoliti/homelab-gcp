@@ -1,11 +1,21 @@
+variable "admin_group" {
+  type        = string
+  description = "(required) Email alias for Google admin group."
+}
+
 variable "billing_account_id" {
   type        = string
-  description = "Billing account ID."
+  description = "(required) Billing account ID."
+}
+
+variable "billing_admins_group" {
+  type        = string
+  description = "(required) Email alias for Google billing admin group."
 }
 
 variable "domain" {
   type        = string
-  description = "Domain of organization."
+  description = "(required) Domain of organization."
 }
 
 variable "folders" {
@@ -14,31 +24,21 @@ variable "folders" {
     iam       = map(list(string))
     group_iam = map(list(string))
   }))
-  description = "List of folders to create."
-}
-
-variable "region" {
-  type        = string
-  description = "Region for VPC and Bucket."
-  default     = "us-east1"
+  description = "(required) List of folders to create."
 }
 
 variable "github_organization" {
   type        = string
-  description = "Organization of the GitHub repository to use for Workload Identity Federation."
+  description = "(required) Organization of the GitHub repository to use for Workload Identity Federation."
 }
 
 variable "github_repository" {
   type        = string
-  description = "Name of the GitHub repository to use for Workload Identity Federation."
+  description = "(required) Name of the GitHub repository to use for Workload Identity Federation."
 }
 
-variable "admin_group" {
+variable "region" {
   type        = string
-  description = "Email alias for Google admin group."
-}
-
-variable "billing_admins_group" {
-  type        = string
-  description = "Email alias for Google billing admin group."
+  description = "(optional) Region for VPC and Bucket."
+  default     = "us-east1"
 }

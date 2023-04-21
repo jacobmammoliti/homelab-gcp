@@ -4,7 +4,7 @@ resource "random_integer" "project_suffix" {
 }
 
 module "projects" {
-  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/project?ref=v18.0.0"
+  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/project?ref=v21.0.0"
 
   for_each = { for project in var.projects : format("%s-%s", project.prefix, project.name) => project }
 

@@ -1,4 +1,6 @@
 terraform {
+  required_version = ">= 1.4.5"
+
   backend "gcs" {
     bucket = "bkt-core-92596"
     prefix = "terraform/bootstrap/state"
@@ -11,7 +13,7 @@ terraform {
     }
     random = {
       source  = "hashicorp/random"
-      version = "3.3.2"
+      version = ">= 3.3.2"
     }
   }
 }

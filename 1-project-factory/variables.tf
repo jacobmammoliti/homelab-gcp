@@ -8,5 +8,5 @@ variable "projects" {
     iam              = map(list(string))
     vpc_host_project = string
   }))
-  description = "List of projects to create."
+  description = "(required) List of projects to create."
 }
