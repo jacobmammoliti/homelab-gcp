@@ -1,5 +1,5 @@
 module "vpc-shared" {
-  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/net-vpc?ref=v20.0.0"
+  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/net-vpc?ref=v21.0.0"
 
   project_id = module.project.project_id
   name       = "vpc-shared"
@@ -14,7 +14,7 @@ module "vpc-shared" {
 }
 
 module "vpc-shared-firewall" {
-  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/net-vpc-firewall?ref=v20.0.0"
+  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/net-vpc-firewall?ref=v21.0.0"
 
   project_id = module.project.project_id
   network    = module.vpc-shared.name
@@ -32,7 +32,7 @@ module "vpc-shared-firewall" {
 }
 
 module "vpc-shared-cloudnat" {
-  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/net-cloudnat?ref=v20.0.0"
+  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/net-cloudnat?ref=v21.0.0"
 
   project_id     = module.project.project_id
   region         = var.region
