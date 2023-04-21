@@ -22,7 +22,7 @@ module "org" {
   }
   org_policies = {
     "constraints/compute.skipDefaultNetworkCreation" = {
-      enforce = true
+      rules = [{ enforce = true }]
     }
   }
 }
