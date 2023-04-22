@@ -13,7 +13,8 @@ module "org" {
       "roles/cloudsupport.viewer",
       "roles/compute.networkViewer",
       "roles/owner",
-      "roles/roles/iam.serviceAccountTokenCreator",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/serviceusage.serviceUsageAdmin",
     ]
 
     (var.billing_admins_group) = [
