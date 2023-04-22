@@ -1,5 +1,5 @@
 module "kms" {
-  source = "git@github.com:GoogleCloudPlatform/cloud-foundation-fabric.git//modules/kms?ref=v18.0.0"
+  source = "git@github.com:GoogleCloudPlatform/cloud-foundation-fabric.git//modules/kms?ref=v21.0.0"
 
   project_id = var.project_id
   key_iam_additive = {
@@ -13,7 +13,7 @@ module "kms" {
     }
   }
   keyring = {
-    location = "us-east1",
+    location = var.region
     name     = "vault-kms"
   }
   keys = {
