@@ -20,6 +20,7 @@ module "project" {
     "cloudbilling.googleapis.com",
     "bigquery.googleapis.com",
     "orgpolicy.googleapis.com",
+    "cloudkms.googleapis.com",
   ]
   shared_vpc_host_config = {
     enabled          = true

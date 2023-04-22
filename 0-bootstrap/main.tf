@@ -18,8 +18,6 @@ terraform {
   }
 }
 
-provider "google" {
-  # impersonate_service_account = "terraform-orchestrator@proj-mission-control-80492.iam.gserviceaccount.com"
-}
+provider "google" {}
 
 provider "random" {}
