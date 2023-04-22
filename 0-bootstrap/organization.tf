@@ -14,7 +14,6 @@ module "org" {
       "roles/compute.networkViewer",
       "roles/owner",
       "roles/iam.serviceAccountTokenCreator",
-      "roles/serviceusage.serviceUsageAdmin",
     ]
 
     (var.billing_admins_group) = [

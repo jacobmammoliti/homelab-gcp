@@ -23,6 +23,7 @@ module "wif-terraform-service-account" {
       "roles/storage.admin",
       "roles/iam.workloadIdentityPoolAdmin",
       "roles/compute.securityAdmin",
+      "roles/serviceusage.serviceUsageAdmin",
     ]
   }
 }
