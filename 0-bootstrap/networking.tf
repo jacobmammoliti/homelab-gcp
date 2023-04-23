@@ -8,7 +8,10 @@ module "vpc-shared" {
       ip_cidr_range      = "10.0.0.0/24"
       name               = "sb-blizzard"
       region             = var.region
-      secondary_ip_range = {}
+      secondary_ip_ranges = {
+        pods     = "5.0.0.0/16"
+        services = "5.1.0.0/16"
+      }
     }
   ]
 }
