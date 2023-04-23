@@ -7,8 +7,9 @@ projects = [
     services = [
       "cloudkms.googleapis.com",
     ]
-    iam              = {}
-    vpc_host_project = "proj-mission-control-80492"
+    iam                  = {}
+    iam_additive_members = {}
+    vpc_host_project     = "proj-mission-control-80492"
   },
   {
     billing_account = "017A11-41C11E-BB4416"
@@ -26,24 +27,21 @@ projects = [
       "artifactregistry.googleapis.com",
       "bigquery.googleapis.com",
     ]
-    iam              = {}
-    vpc_host_project = "proj-mission-control-80492"
+    iam                  = {}
+    iam_additive_members = {}
+    vpc_host_project     = "proj-mission-control-80492"
   },
   {
     billing_account = "017A11-41C11E-BB4416"
-    name            = "sports-board"
+    name            = "nexus"
     prefix          = "prod"
     parent          = "840883279074"
     services = [
-      "cloudfunctions.googleapis.com",
-      "cloudbuild.googleapis.com",
-      "cloudscheduler.googleapis.com",
-      "eventarc.googleapis.com",
-      "run.googleapis.com",
-      "artifactregistry.googleapis.com",
-      "bigquery.googleapis.com"
+      "container.googleapis.com",
+      "stackdriver.googleapis.com",
     ]
-    iam              = {}
-    vpc_host_project = "proj-mission-control-80492"
+    iam                  = {}
+    iam_additive_members = {}
+    vpc_host_project     = "proj-mission-control-80492"
   },
 ]
