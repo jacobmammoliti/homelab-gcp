@@ -7,9 +7,9 @@ projects = [
     services = [
       "cloudkms.googleapis.com",
     ]
-    iam              = {}
-    iam_additive_iam = {}
-    vpc_host_project = "proj-mission-control-80492"
+    iam                  = {}
+    iam_additive_members = {}
+    vpc_host_project     = "proj-mission-control-80492"
   },
   {
     billing_account = "017A11-41C11E-BB4416"
@@ -27,9 +27,9 @@ projects = [
       "artifactregistry.googleapis.com",
       "bigquery.googleapis.com",
     ]
-    iam              = {}
-    iam_additive_iam = {}
-    vpc_host_project = "proj-mission-control-80492"
+    iam                  = {}
+    iam_additive_members = {}
+    vpc_host_project     = "proj-mission-control-80492"
   },
   {
     billing_account = "017A11-41C11E-BB4416"
@@ -40,8 +40,8 @@ projects = [
       "container.googleapis.com",
       "stackdriver.googleapis.com",
     ]
-    iam              = {}
-    iam_additive_iam = {}
-    vpc_host_project = "proj-mission-control-80492"
+    iam                  = {}
+    iam_additive_members = {}
+    vpc_host_project     = "proj-mission-control-80492"
   },
 ]
