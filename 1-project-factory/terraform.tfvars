@@ -47,7 +47,7 @@ projects = [
     vpc_host_project     = "proj-mission-control-80492"
     service_identity_iam = {
       "roles/container.hostServiceAgentUser" = ["container-engine"]
-      "roles/compute.networkUser"            = ["container-engine"]
+      "roles/compute.networkUser"            = ["container-engine", "cloudservices"]
     }
   },
 ]
