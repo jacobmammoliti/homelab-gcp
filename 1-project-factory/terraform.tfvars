@@ -10,6 +10,7 @@ projects = [
     iam                  = {}
     iam_additive_members = {}
     vpc_host_project     = "proj-mission-control-80492"
+    service_identity_iam = {}
   },
   {
     billing_account = "017A11-41C11E-BB4416"
@@ -30,6 +31,7 @@ projects = [
     iam                  = {}
     iam_additive_members = {}
     vpc_host_project     = "proj-mission-control-80492"
+    service_identity_iam = {}
   },
   {
     billing_account = "017A11-41C11E-BB4416"
