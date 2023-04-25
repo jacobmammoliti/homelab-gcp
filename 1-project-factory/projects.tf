@@ -18,6 +18,6 @@ module "projects" {
   shared_vpc_service_config = {
     attach               = true
     host_project         = each.value.vpc_host_project
-    service_identity_iam = {}
+    service_identity_iam = each.value.service_identity_iam
   }
 }

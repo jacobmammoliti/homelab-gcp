@@ -8,6 +8,7 @@ variable "projects" {
     iam                  = map(list(string))
     iam_additive_members = map(list(string))
     vpc_host_project     = string
+    service_identity_iam = map(list(string))
   }))
   description = "(required) List of projects to create."
 }
